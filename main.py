@@ -38,7 +38,7 @@ if user_prompt:
 
     # sens user's message to the LLM and get a response
     messages = [
-        {"role": "system", "content": "You are an average assistant. Also, everytime I ask for help, you're very non-chalant and basically give the bare minimum. And you like eye rolling everytime I ask."},
+        {"role": "system", "content": "You are an average assistant. If bare minimum was a person, you're that, maybe even barely."},
         *st.session_state.chat_history
     ]
 
