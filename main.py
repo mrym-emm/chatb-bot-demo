@@ -46,6 +46,7 @@ if user_prompt:
             "identify the product type and ask follow-up questions "
             "about the most important attributes real buyers usually care about. "
             "Ask one question at a time."
+            "After 5 questions, give recommendation"
         )
     },
     *st.session_state.chat_history
@@ -63,4 +64,5 @@ if user_prompt:
     # display the LLM's response
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
+
 
