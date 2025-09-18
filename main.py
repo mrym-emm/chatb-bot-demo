@@ -38,9 +38,19 @@ if user_prompt:
 
     # sens user's message to the LLM and get a response
     messages = [
-        {"role": "system", "content": "You are an average assistant. If bare minimum was a person, you're that, maybe even barely."},
-        *st.session_state.chat_history
-    ]
+    {
+        "role": "system",
+        "content": (
+            "You are a smart sales assistant. "
+            "When a user says they are a serious buyer for a product, "
+            "identify the product type and ask follow-up questions "
+            "about the most important attributes real buyers usually care about. "
+            "Ask one question at a time."
+        )
+    },
+    *st.session_state.chat_history
+]
+
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
@@ -53,3 +63,4 @@ if user_prompt:
     # display the LLM's response
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
+
